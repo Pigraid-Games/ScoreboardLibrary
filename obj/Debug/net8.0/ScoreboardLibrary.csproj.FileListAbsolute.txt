@@ -1,0 +1,17 @@
+F:\Pigraid-Games\ScoreboardLibrary\bin\Debug\net8.0\ScoreboardLibrary.deps.json
+F:\Pigraid-Games\ScoreboardLibrary\bin\Debug\net8.0\ScoreboardLibrary.dll
+F:\Pigraid-Games\ScoreboardLibrary\bin\Debug\net8.0\ScoreboardLibrary.pdb
+F:\Pigraid-Games\ScoreboardLibrary\bin\Debug\net8.0\LanguageManager.dll
+F:\Pigraid-Games\ScoreboardLibrary\bin\Debug\net8.0\MiNET.dll
+F:\Pigraid-Games\ScoreboardLibrary\bin\Debug\net8.0\LanguageManager.pdb
+F:\Pigraid-Games\ScoreboardLibrary\bin\Debug\net8.0\MiNET.pdb
+F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ScoreboardLibrary.csproj.AssemblyReference.cache
+F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ScoreboardLibrary.GeneratedMSBuildEditorConfig.editorconfig
+F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ScoreboardLibrary.AssemblyInfoInputs.cache
+F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ScoreboardLibrary.AssemblyInfo.cs
+F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ScoreboardLibrary.csproj.CoreCompileInputs.cache
+F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ScoreboardLibrary.csproj.CopyComplete
+F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ScoreboardLibrary.dll
+F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\refint\ScoreboardLibrary.dll
+F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ScoreboardLibrary.pdb
+F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ref\ScoreboardLibrary.dll
