@@ -49,24 +49,4 @@ public class Scoreboard
             player.SendPacket(Score);
         }
     }
-
-    // Update an existing line in the scoreboard
-    public void UpdateLine(Player player, uint row, string text, bool update = false)
-    {
-        var entry = new ScoreEntryChangeFakePlayer()
-        {
-            Id = row + 1,
-            Score = row,
-            CustomName = text,
-            ObjectiveName = ObjectiveName
-        };
-        
-        Entries[(int)row] = entry;
-        Score.entries = Entries;
-
-        if (update)
-        {
-            player.SendPacket(Score);
-        }
-    }
 }
