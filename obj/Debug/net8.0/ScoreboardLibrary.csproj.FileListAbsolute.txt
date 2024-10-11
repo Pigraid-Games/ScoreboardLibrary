@@ -15,3 +15,4 @@ F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ScoreboardLibrary.dll
 F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\refint\ScoreboardLibrary.dll
 F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ScoreboardLibrary.pdb
 F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ref\ScoreboardLibrary.dll
+F:\Pigraid-Games\ScoreboardLibrary\obj\Debug\net8.0\ScoreboardLibrary.sourcelink.json

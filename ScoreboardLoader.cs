@@ -1,8 +1,11 @@
 ﻿using System.Reflection;
 using MiNET;
+using MiNET.Entities;
 using MiNET.Net;
 using MiNET.Plugins;
 using MiNET.Plugins.Attributes;
+using MiNET.Utils.Skins;
+using MiNET.Utils.Vectors;
 
 namespace ScoreboardLibrary;
 
@@ -13,7 +16,7 @@ namespace ScoreboardLibrary;
     Author = "Antoine Langevin")]
 public class ScoreboardLoader : Plugin
 {
-    static void Send(Player player, string displayName, params Line[] lines)
+    public static void Send(Player player, string displayName, params Line[] lines)
     {
         var length = lines.Length;
         if (length is > 15 or < 1)
