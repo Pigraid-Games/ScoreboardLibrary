@@ -1,13 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Reflection;
-using MiNET;
-using MiNET.Entities;
+﻿using MiNET;
 using MiNET.Net;
 using MiNET.Plugins;
 using MiNET.Plugins.Attributes;
-using MiNET.Utils.Skins;
-using MiNET.Utils.Vectors;
 
 namespace ScoreboardLibrary;
 
@@ -22,30 +16,25 @@ public class ScoreboardLoader : Plugin
     {
         var length = lines.Length;
         if (length is > 15 or < 1)
-        {
             throw new Exception("Score must be between the value of 1-15. Out of range, value: " + length);
-        }
-        
+
         // Clear current scoreboard
         Remove(player);
-        
+
         // Create new scoreboard
         var scoreboard = new Scoreboard(player, displayName);
-        
+
         // Get last line & remove it from the params array
         var lastLine = lines.Last();
         lines = lines.Take(lines.Length - 1).ToArray();
-        
+
         // Add the lines
-        foreach (var line in lines)
-        {
-            scoreboard.AddLine(player, line.Row, line.Text);
-        }
+        foreach (var line in lines) scoreboard.AddLine(player, line.Row, line.Text);
         // Keep last line for the update = true
         scoreboard.AddLine(player, lastLine.Row, lastLine.Text, true);
     }
 
-    static void Remove(Player player)
+    private static void Remove(Player player)
     {
         var packet = McpeRemoveObjective.CreateObject();
         packet.objectiveName = "§r";

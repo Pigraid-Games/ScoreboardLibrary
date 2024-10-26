@@ -1,19 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\LanguageManager\LanguageManager.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\LanguageManager\LanguageManager.csproj"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="MiNET">
-      <HintPath>..\MiNET\src\MiNET\MiNET\bin\Debug\net8.0\MiNET.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+    <ItemGroup>
+        <Reference Include="MiNET">
+            <HintPath>..\MiNET\src\MiNET\MiNET\bin\Debug\net8.0\MiNET.dll</HintPath>
+        </Reference>
+    </ItemGroup>
 
 </Project>
