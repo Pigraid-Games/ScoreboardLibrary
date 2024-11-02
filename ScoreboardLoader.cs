@@ -34,7 +34,7 @@ public class ScoreboardLoader : Plugin
         scoreboard.AddLine(player, lastLine.Row, lastLine.Text, true);
     }
 
-    private static void Remove(Player player)
+    public static void Remove(Player player)
     {
         var packet = McpeRemoveObjective.CreateObject();
         packet.objectiveName = "§r";
