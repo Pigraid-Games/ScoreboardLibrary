@@ -1,5 +1,6 @@
 ﻿using MiNET;
 using MiNET.Net;
+using MiNET.Net.Packets.Mcpe;
 using MiNET.Utils;
 
 namespace ScoreboardLibrary;
@@ -16,10 +17,10 @@ public class Scoreboard
         DisplayName = displayName;
 
         // Create & send packet
-        DisplayObjective.displaySlot = DisplaySlot;
+        DisplayObjective.displaySlotName = DisplaySlot;
         DisplayObjective.objectiveName = ObjectiveName;
         DisplayObjective.criteriaName = CriteriaName;
-        DisplayObjective.displayName = DisplayName;
+        DisplayObjective.objectiveDisplayName = DisplayName;
         DisplayObjective.sortOrder = SortOrder;
 
         player.SendPacket(DisplayObjective);

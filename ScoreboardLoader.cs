@@ -1,5 +1,6 @@
 ﻿using MiNET;
 using MiNET.Net;
+using MiNET.Net.Packets.Mcpe;
 using MiNET.Plugins;
 using MiNET.Plugins.Attributes;
 
