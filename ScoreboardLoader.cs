@@ -1,8 +1,8 @@
-﻿using MiNET;
-using MiNET.Net;
-using MiNET.Net.Packets.Mcpe;
-using MiNET.Plugins;
-using MiNET.Plugins.Attributes;
+﻿using PigNet;
+using PigNet.Net;
+using PigNet.Net.Packets.Mcpe;
+using PigNet.Plugins;
+using PigNet.Plugins.Attributes;
 
 namespace ScoreboardLibrary;
 

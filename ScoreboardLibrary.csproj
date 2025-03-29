@@ -11,8 +11,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="MiNET">
-        <HintPath>..\MiNET-Pigraid\src\MiNET\MiNET\bin\Debug\net8.0\MiNET.dll</HintPath>
+      <Reference Include="PigNet">
+        <HintPath>..\MiNET-Pigraid\src\MiNET\PigNet\bin\Debug\net8.0\PigNet.dll</HintPath>
       </Reference>
     </ItemGroup>
 
