@@ -104,8 +104,8 @@ Maintained as part of the [Pigraid](https://github.com/Pigraid) project.
 
 ---
 
-## 📜 License
+## 📜 Contact Us
 
-This plugin is proprietary and distributed as part of the Pigraid infrastructure.
+You can create a new issue at any given time to report a problem with the library or  join our [Discord](https://discord.gg/9gzutNXX2D) if you have any question!
 
 ---
