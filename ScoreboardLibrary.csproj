@@ -12,7 +12,7 @@
 
     <ItemGroup>
       <Reference Include="PigNet">
-        <HintPath>..\MiNET-Pigraid\src\MiNET\PigNet\bin\Debug\net8.0\PigNet.dll</HintPath>
+        <HintPath>..\PigNet\src\PigNet\PigNet\bin\Debug\net8.0\PigNet.dll</HintPath>
       </Reference>
     </ItemGroup>
 

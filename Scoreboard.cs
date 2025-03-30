@@ -1,5 +1,4 @@
 ﻿using PigNet;
-using PigNet.Net;
 using PigNet.Net.Packets.Mcpe;
 using PigNet.Utils;
 
@@ -7,44 +6,86 @@ namespace ScoreboardLibrary;
 
 public class Scoreboard
 {
-    private const string ObjectiveName = "§r";
-    private const string DisplaySlot = "sidebar";
-    private const string CriteriaName = "dummy";
+    private const string DefaultObjectiveName = "§r";
+    private const string DefaultDisplaySlot = "sidebar";
+    private const string DefaultCriteriaName = "dummy";
 
-    public Scoreboard(Player player, string displayName, int sortOrder = 0)
+    private readonly Player _player;
+    private readonly string _objectiveName;
+    private readonly McpeSetScore _score;
+    private readonly ScoreEntries _entries;
+
+    /// <summary>
+    /// Represents a scoreboard system that allows creation, modification, and management of player scoreboards.
+    /// </summary>
+    /// <remarks>
+    /// This class provides functionality to manage scoreboards, add lines of text, update specific lines, and clear existing lines.
+    /// It is specifically designed for integration with the Pigraid ecosystem.
+    /// </remarks>
+    public Scoreboard(Player player, string displayName, string objectiveName = DefaultObjectiveName,
+        string displaySlot = DefaultDisplaySlot, string criteriaName = DefaultCriteriaName, int sortOrder = 0)
     {
-        SortOrder = sortOrder;
-        DisplayName = displayName;
+        _player = player;
+        _objectiveName = objectiveName;
 
-        // Create & send packet
-        DisplayObjective.displaySlotName = DisplaySlot;
-        DisplayObjective.objectiveName = ObjectiveName;
-        DisplayObjective.criteriaName = CriteriaName;
-        DisplayObjective.objectiveDisplayName = DisplayName;
-        DisplayObjective.sortOrder = SortOrder;
+        _score = McpeSetScore.CreateObject();
+        _entries = [];
 
-        player.SendPacket(DisplayObjective);
+        var displayObjective = McpeSetDisplayObjective.CreateObject();
+        displayObjective.displaySlotName = displaySlot;
+        displayObjective.objectiveName = _objectiveName;
+        displayObjective.criteriaName = criteriaName;
+        displayObjective.objectiveDisplayName = displayName;
+        displayObjective.sortOrder = sortOrder;
+
+        _player.SendPacket(displayObjective);
     }
 
-    private int SortOrder { get; }
-    private string DisplayName { get; }
-    private McpeSetScore Score { get; } = McpeSetScore.CreateObject();
-    private ScoreEntries Entries { get; } = [];
-    private McpeSetDisplayObjective DisplayObjective { get; } = McpeSetDisplayObjective.CreateObject();
-
-    // Add a new line to the scoreboard
-    public void AddLine(Player player, uint row, string text, bool update = false)
+    /// <summary>
+    /// Adds a new line of text to the scoreboard at a specified or next available row.
+    /// </summary>
+    /// <param name="text">The text to add to the scoreboard.</param>
+    /// <param name="row">The optional row number where the text should be added. If not provided, it will use the next available row.</param>
+    /// <param name="update">Determines whether to update the scoreboard immediately after the line is added.</param>
+    public void AddLine(string text, uint? row = null, bool update = false)
     {
-        Entries.Add(new ScoreEntryChangeFakePlayer
+        var lineId = row ?? (uint)(_entries.Count + 1);
+
+        _entries.Add(new ScoreEntryChangeFakePlayer
         {
-            Id = row + 1,
-            Score = row,
+            Id = lineId,
+            Score = lineId,
             CustomName = text,
-            ObjectiveName = ObjectiveName
+            ObjectiveName = _objectiveName
         });
 
-        Score.entries = Entries;
+        _score.entries = _entries;
 
-        if (update) player.SendPacket(Score);
+        if (update) _player.SendPacket(_score);
+    }
+
+    /// <summary>
+    /// Updates the content of a specific line on the scoreboard.
+    /// </summary>
+    /// <param name="lineId">The unique identifier of the line to update.</param>
+    /// <param name="newText">The new text to display on the specified line.</param>
+    public void UpdateLine(uint lineId, string newText)
+    {
+        var entry = _entries.FirstOrDefault(e => e.Id == lineId);
+        if (entry == null) return;
+
+        entry.ObjectiveName = newText;
+        _score.entries = _entries;
+        _player.SendPacket(_score);
+    }
+
+    /// <summary>
+    /// Clears all lines from the scoreboard, removing all existing entries.
+    /// </summary>
+    public void ClearLines()
+    {
+        _entries.Clear();
+        _score.entries = _entries;
+        _player.SendPacket(_score);
     }
 }
