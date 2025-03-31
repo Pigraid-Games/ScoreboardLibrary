@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\LanguageManager\LanguageManager.csproj"/>
-    </ItemGroup>
-
-    <ItemGroup>
       <Reference Include="PigNet">
         <HintPath>..\PigNet\src\PigNet\PigNet\bin\Debug\net8.0\PigNet.dll</HintPath>
       </Reference>
